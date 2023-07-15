@@ -9,7 +9,7 @@ function LolChampionsApi(props){
     const [vetor, setVetor] = useState([]);
 
     const obterDados = async () => {
-        const dados = await fetch('http://ddragon.leagueoflegends.com/cdn/13.13.1/data/pt_BR/champion.json')
+        const dados = await fetch('https://ddragon.leagueoflegends.com/cdn/13.13.1/data/pt_BR/champion.json')
         const dadosConvertidos = await dados.json()
         
         setVetor(converteDados(dadosConvertidos))
@@ -24,7 +24,7 @@ function LolChampionsApi(props){
             const dataChamp = {
                 "name": dados.data[`${nome}`].name,
                 "id": i,
-                "image": `http://ddragon.leagueoflegends.com/cdn/img/champion/splash/${nome}_0.jpg`
+                "image": `https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${nome}_0.jpg`
             }
 
             i++
