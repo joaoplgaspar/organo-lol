@@ -1,0 +1,27 @@
+.time {
+    text-align: center;
+    padding: 32px;
+    background: url(../../../public/imagens/fundo.png);
+    position: relative;
+}
+
+.time h3 {
+    color: #212121;
+    font-size: 32px;
+    border-bottom: 4px solid;
+    display: inline-block;
+    padding-bottom: 8px;
+}
+
+.time .jogadores {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 32px;
+    flex-wrap: wrap;
+}
+
+.input-cor {
+    position: absolute;
+    top: 20px;
+    right: 50px;
+}

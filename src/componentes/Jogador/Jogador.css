@@ -1,0 +1,69 @@
+.jogador {
+    width: 280px;
+    position: relative;
+}
+
+.jogador .cabecalho {
+    background-color:  #F0F0F0;
+    border-radius: 10px 10px 0px 0px;
+    display: flex;
+    justify-content: center;
+}
+
+.jogador .campeaoImagem {
+    max-width: 280px;
+    border-radius: 10px 10px 0 0;
+    position: absolute;
+    z-index: 0;
+}
+
+.jogador .jogadorImagem {
+    width: 150px;
+    border-radius: 50%;
+    position: relative;
+    bottom: -90px;
+    border: 3px solid #ffffff;
+    z-index: 1;
+    max-width: 140px;
+    max-height: 140px;
+    height: 100%;
+    width: 100%;
+}
+
+.jogador .rodape {
+    background: #FFFFFF;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.08);
+    border-radius: 0px 0px 10px 10px;
+    padding-top: 75px;
+    padding-bottom: 30px;
+}
+
+.jogador .rodape h4 {
+    margin: 25px 0 5px 0;
+    color: #6278F7;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.jogador .rodape p {
+    margin: 0;
+    font-size: 18px;
+    color: #212121;
+    font-weight: 400;
+}
+
+.deletar {
+    position: absolute;
+    right: -10px;
+    top: -10px;
+    z-index: 2;
+    color: white;
+    cursor: pointer;
+    background: #212121;
+    border-radius: 50%;
+}
+
+.favoritar {
+    margin-top: 10px;
+    font-size: 20px;
+}

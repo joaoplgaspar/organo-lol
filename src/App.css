@@ -1,0 +1,12 @@
+.title-rotas {
+    display: flex;
+    justify-content: center;
+}
+
+.title-rotas h2{
+    color: #212121;
+    font-size: 32px;
+    border-bottom: 4px solid;
+    display: inline-block;
+    padding-bottom: 8px;
+}
