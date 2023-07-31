@@ -1,5 +1,7 @@
 <h1> Organo LoL </h1>
 
+Organograma do jogo League Of Legends para rankear e/ou montar composições com seus campeões preferidos do jogo.
+
 | :placard: Vitrine.Dev |     |
 | -------------  | --- |
 | :sparkles: Nome        | **Organo LoL**
