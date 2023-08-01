@@ -1,5 +1,7 @@
 <h1> Organo LoL </h1>
 
+![Static Badge](https://img.shields.io/badge/Status-_Finalizado-green?style=for-the-badge)
+
 Organograma do jogo League Of Legends para rankear e/ou montar composições com seus campeões preferidos do jogo.
 
 | :placard: Vitrine.Dev |     |
@@ -8,9 +10,11 @@ Organograma do jogo League Of Legends para rankear e/ou montar composições com
 | :label: Tecnologias | react, html5, css3, javascript
 | :rocket: URL         | https://organo-lol.vercel.app
 
+<hr>
+
 ![Imagem do Organo LoL](https://github.com/joaoplgaspar/organo-lol/assets/130015259/a02d2a55-c641-4701-82b1-c570ad52dcad#vitrinedev)
 
-![Static Badge](https://img.shields.io/badge/Status-_Finalizado-green?style=for-the-badge)
+<hr>
 
 ## Resumo do projeto
 
