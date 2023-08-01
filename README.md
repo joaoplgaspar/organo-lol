@@ -21,7 +21,7 @@ Organograma do jogo League Of Legends para rankear e/ou montar composições com
 O Organo LoL é um projeto de organograma proposto por um curso da Alura. O projeto tem como objetivo fazer você rankear ou criar composições com os seus campeões, do jogo League of Legends, preferidos, podendo colocar seu nick no jogo, uma foto sua, escolher o campeão a partir de uma API disponibilizada pelo próprio jogo, uma descrição de como você é jogando ele, e escolher uma rota ou a composição que deseja.
 
 
-<img src="https://github.com/joaoplgaspar/organo-lol/assets/130015259/c51a0561-26c7-43ec-8552-633fe8c7736c" width=100%/>
+![Organo Lol Gif](https://github.com/joaoplgaspar/organo-lol/assets/130015259/d7fc9c95-c60e-4631-95b9-43a2ae3b3c67)
 
 
 # :hammer: Funcionalidades do projeto
