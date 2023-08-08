@@ -1,4 +1,4 @@
-<h1> Organo LoL </h1>
+<h1> Organo LoL TypeScript </h1>
 
 ![Static Badge](https://img.shields.io/badge/Status-_Finalizado-green?style=for-the-badge)
 
@@ -7,7 +7,7 @@ Organograma do jogo League Of Legends para rankear e/ou montar composições com
 | :placard: Vitrine.Dev |     |
 | -------------  | --- |
 | :sparkles: Nome        | **Organo LoL**
-| :label: Tecnologias | react, html5, css3, javascript
+| :label: Tecnologias | react, typescript, html5, css3, javascript
 | :rocket: URL         | https://organo-lol.vercel.app
 
 <hr>
@@ -37,6 +37,6 @@ O Organo LoL é um projeto de organograma proposto por um curso da Alura. O proj
 **A seguir `npm start` para iniciar o projeto**
 
 ## ✔️ Técnicas e tecnologias utilizadas
-- ``React``
+- ``React e TypeScript``
 - ``HTML, CSS, JAVASCRIPT``
 - ``Manipulação do estado do objeto``
