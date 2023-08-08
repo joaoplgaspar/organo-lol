@@ -3,10 +3,18 @@ import Botao from '../Botao'
 import Campo from '../Campo'
 import ListaSuspensa from '../ListaSuspensa'
 import LolChampionsApi from '../LolChampionsApi'
-import { v4 as uuidv4 } from 'uuid'
 import './Formulario.css'
+import {IJogador} from '../../shared/interfaces/IJogador'
+import {v4 as uuidv4} from 'uuid';
 
-function Formulario(props) {
+
+interface FormularioProps {
+    aoJogadorCadastrado: (jogador: IJogador) => void
+    rotas: string[]
+    cadastrarGrupo: (lista: {}) => void
+}
+
+function Formulario({aoJogadorCadastrado, rotas, cadastrarGrupo} :FormularioProps) {
 
     const niveis = [
         'Goat',
@@ -19,16 +27,16 @@ function Formulario(props) {
     const [nome, setNome] = useState('')
     const [imagem, setImagem] = useState('')
 
-    const [campeao, setCampeao] = useState([])
+    const [campeao, setCampeao] = useState({nome, image: ''})
     const [nivel, setNivel] = useState('')
     const [rota, setRota] = useState('')
 
     const [nomeGrupo, setNomeGrupo] = useState('')
     const [corGrupo, setCorGrupo] = useState('#000000')
 
-    const aoSalvar = (evento) => {
+    const aoSalvar = (evento: React.FormEvent<HTMLFormElement>) => {
         evento.preventDefault()
-        props.aoJogadorCadastrado({
+        aoJogadorCadastrado({
             nome,
             imagem,
             campeao: campeao.nome,
@@ -40,12 +48,12 @@ function Formulario(props) {
         })
         setNome('')
         setImagem('')
-        setCampeao('')
+        setCampeao({nome: '', image: ''})
         setNivel('')
         setRota('')
     }
 
-    const adicionarCampeao = (nome, image) => {
+    const adicionarCampeao = (nome: string, image: string) => {
         const campeao = {
             nome,
             image
@@ -74,7 +82,7 @@ function Formulario(props) {
                 />
                 <LolChampionsApi 
                     valor={campeao}
-                    aoAlterado={(nome, image) => adicionarCampeao(nome, image)}
+                    aoAlterado={(nome: string, image: string) => adicionarCampeao(nome, image)}
                 />
                 <ListaSuspensa 
                     obrigatorio={true} 
@@ -85,7 +93,7 @@ function Formulario(props) {
                 />
                 <ListaSuspensa 
                     obrigatorio={true} 
-                    itens={props.rotas} 
+                    itens={rotas} 
                     label="Rota"
                     valor={rota}
                     aoAlterado={valor => setRota(valor)}
@@ -96,7 +104,7 @@ function Formulario(props) {
             </form>
             <form onSubmit={ evento => {
                 evento.preventDefault()
-                props.cadastrarGrupo({ nome: nomeGrupo, cor: corGrupo})
+                cadastrarGrupo({ nome: nomeGrupo, cor: corGrupo})
             }}>
                 <h2>Preencha os dados para criar um novo grupo.</h2>
                 <Campo 

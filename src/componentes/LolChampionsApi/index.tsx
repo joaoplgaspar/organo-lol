@@ -5,8 +5,13 @@ let ListaNomesChamps = 'Aatrox Ahri Akali Akshan Alistar Amumu Anivia Annie Aphe
 
 let listaNomeChamps = ListaNomesChamps.split(" ")
 
-function LolChampionsApi(props){
-    const [vetor, setVetor] = useState([]);
+interface LolChampionsApiProps {
+    aoAlterado: (evento: string, image: string) => void
+    valor: {}
+}
+
+function LolChampionsApi({aoAlterado} :LolChampionsApiProps){
+    const [vetor, setVetor] = useState([{name:'', image:'', id:''}]);
 
     const obterDados = async () => {
         const dados = await fetch('https://ddragon.leagueoflegends.com/cdn/13.13.1/data/pt_BR/champion.json')
@@ -15,9 +20,9 @@ function LolChampionsApi(props){
         setVetor(converteDados(dadosConvertidos))
     }
 
-    function converteDados(dadosConvertidos) {
-        let listaArr = []
-        let dados = dadosConvertidos
+    function converteDados(dadosConvertidos: {}) {
+        let listaArr:any = []
+        let dados:any = dadosConvertidos
         let i = 0
 
         listaNomeChamps.forEach(nome => {
@@ -40,14 +45,14 @@ function LolChampionsApi(props){
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
-    function descobrirImage(target) {
+    function descobrirImage(target:string): any{
         let image
-        // eslint-disable-next-line
-        vetor.map( objeto => {
+
+        vetor.forEach( objeto => {
             if(objeto.name === target){
-                image = objeto.image
+                image = objeto.image 
             }
-        }) 
+        })   
 
         return image
     }
@@ -55,7 +60,7 @@ function LolChampionsApi(props){
     return (
         <div className='lista-suspensa-champ'>
             <label>Campeão</label>
-            <select onChange={evento => props.aoAlterado(evento.target.value, descobrirImage(evento.target.value)
+            <select onChange={evento => aoAlterado(evento.target.value, descobrirImage(evento.target.value) 
                 )}> 
                 <option value=""></option>
                 {vetor.map( objeto => (<option 

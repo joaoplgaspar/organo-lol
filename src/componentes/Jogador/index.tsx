@@ -1,7 +1,19 @@
 import './Jogador.css'
 import { AiFillCloseCircle, AiOutlineHeart, AiFillHeart } from 'react-icons/ai' 
 
-const Jogador = ( {nome, imagem, nivel, imagemCampeao, campeao, aoDeletar, id, favorito, aoFavoritar}) => {
+interface JogadorProps {
+    nome: string
+    imagem: string
+    nivel: string
+    imagemCampeao: string
+    campeao: string
+    aoDeletar: (id: number) => void
+    id: number
+    favorito: boolean
+    aoFavoritar: (id: number) => void
+}
+
+const Jogador = ( {nome, imagem, nivel, imagemCampeao, campeao, aoDeletar, id, favorito, aoFavoritar} :JogadorProps) => {
     function favoritar() {
         aoFavoritar(id)
     }

@@ -4,7 +4,8 @@ import Banner from './componentes/Banner';
 import Formulario from './componentes/Formulario';
 import Rota from './componentes/Rota';
 import Rodape from './componentes/Rodape';
-import { v4 as uuidv4 } from 'uuid'
+import {v4 as uuidv4} from 'uuid';
+import { IJogador } from './shared/interfaces/IJogador';
 
 function App() {
 
@@ -36,17 +37,17 @@ function App() {
     }
   ])
 
-  const [jogadores, setJogadores] = useState([])
+  const [jogadores, setJogadores] = useState<IJogador[]>([])
 
-  const aoNovoJogadorAdicionado = (jogador) => {
+  const aoNovoJogadorAdicionado = (jogador: IJogador) => {
     setJogadores([...jogadores, jogador])
   }
 
-  function deletarJogador(id) {
+  function deletarJogador(id: number) {
     setJogadores(jogadores.filter(jogador => jogador.id !== id))
   }
 
-  function mudarCorDaRota(cor, id) {
+  function mudarCorDaRota(cor:string, id:number) {
     setRotas(rotas.map(rota => {
       if(rota.id === id) {
         rota.cor = cor
@@ -55,11 +56,11 @@ function App() {
     }))
   }
 
-  function cadastrarGrupo(novoGrupo) {
+  function cadastrarGrupo(novoGrupo: any) {
     setRotas([...rotas, {...novoGrupo, id: uuidv4()}])
   }
 
-  function resolverFavorito(id) {
+  function resolverFavorito(id: number) {
     setJogadores(jogadores.map(jogador => {
       if(jogador.id === id) jogador.favorito = !jogador.favorito
       return jogador
@@ -69,7 +70,7 @@ function App() {
 
   return (
     <div className="App">
-      <Banner />
+      <Banner enderecoImagem='/imagens/banner.png' textoAlt='O banner principal da página do Organo'/>
       <Formulario
         cadastrarGrupo={cadastrarGrupo} 
         rotas={rotas.map(rota => rota.nome)} 
@@ -78,6 +79,7 @@ function App() {
       <div className='title-rotas'><h2>Minha organização</h2></div>
       {rotas.map(rota => 
         <Rota
+          corPrimaria={rota.cor}
           aoFavoritar={resolverFavorito}
           mudarCor={mudarCorDaRota}
           key={rota.nome} 
